@@ -1,0 +1,29 @@
+{
+  "name": "ydb-table-defs-examples",
+  "version": "1.0.0",
+  "description": "auth ydb token",
+  "scripts": {
+    "run": "ts-node ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ulibka68/ydb-auth-token"
+  },
+  "author": "Gayrat Vlasov",
+  "license": "Apache",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "pino-pretty": "^7.3.0",
+    "ydb-sdk": "^2.9.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
