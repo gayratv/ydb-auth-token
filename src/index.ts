@@ -9,11 +9,10 @@ const databaseName = process.env.DATABASENAME!;
 const logger = getLogger({ level: process.env.LOGLEVEL! });
 const entryPoint = process.env.ENTRYPOINT!;
 const driver: Driver = null as unknown as Driver; // singleton
+const accessToken = fs.readFileSync(path.resolve(__dirname, 'iam-token.txt'), 'utf8').trim();
 
 export async function run() {
     logger.debug('Driver initializing...');
-
-    const accessToken = fs.readFileSync(path.resolve(__dirname, 'iam-token.txt'), 'utf8').trim();
 
     const authService = new TokenAuthService(accessToken, databaseName);
     const driver = new Driver(entryPoint, databaseName, authService);
@@ -28,6 +27,7 @@ export async function run() {
 
 (async () => {
     console.log('Инициализация драйвера');
+    console.log('accessToken :', accessToken, '\n\n');
     await run();
     console.log('Драйвер инициализирован - токен сработал');
 })();
